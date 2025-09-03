@@ -1,0 +1,25 @@
+<div class="class">
+    <div class="AddTarefas">
+        <h3>Adicionar tarefas</h3>
+
+        <input [(ngModel)]="descIpt" name="descIpt" type="text" placeholder="Descrição">
+
+        <input [(ngModel)]="dificultIpt" name="dificultIpt" type="text" placeholder="Nível De Dificuldade">
+
+        <button style="margin-top: 8px;" (click)="adicionarNovaTarefa()">Adicionar tarefa</button>
+    </div>
+    <div class="ListTarefas">
+        <h3>Lista de tarefas: </h3>
+        @for (item of tarefas; track $index) {
+        <ul [id]="item.id" [ngStyle]="{'background-color': item.corFundo}">
+            <li>{{item.id}}</li>
+            <li>{{item.descricao}}</li>
+            <li>{{item.nivelDeDificuldade}}</li>
+            <button style="margin-top: 8px; margin-right: 4px;" (click)="marcarConcluida(item.id)">Marcar como concluída</button>
+            <button style="margin-top: 8px; margin-right: 4px;" (click)="removerTarefa(item.id)">Remover tarefa</button>
+        </ul>
+        } @empty {
+            <li>Não há tarefa alguma para fazer</li>
+        }
+    </div>
+</div>
