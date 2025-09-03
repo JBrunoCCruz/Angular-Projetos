@@ -1,0 +1,8 @@
+body {
+    background-color: #f2116c;
+    display: flex;
+    flex-direction: column;   /* coloca as divs em coluna */
+    justify-content: center;  /* centraliza verticalmente */
+    align-items: center;      /* centraliza horizontalmente */
+    height: 100vh;            /* ocupa a tela toda */
+}
